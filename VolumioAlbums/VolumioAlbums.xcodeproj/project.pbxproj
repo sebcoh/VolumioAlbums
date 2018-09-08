@@ -14,6 +14,7 @@
 		829688B52143CF750063B7C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829688B32143CF750063B7C4 /* LaunchScreen.storyboard */; };
 		829688C02143CF750063B7C4 /* VolumioAlbumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829688BF2143CF750063B7C4 /* VolumioAlbumsTests.swift */; };
 		829688CB2143CF750063B7C4 /* VolumioAlbumsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829688CA2143CF750063B7C4 /* VolumioAlbumsUITests.swift */; };
+		D0FE0D662672D36A40637624 /* Pods_VolumioAlbums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9842ACEF4340F71C62D95F62 /* Pods_VolumioAlbums.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		829688C62143CF750063B7C4 /* VolumioAlbumsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolumioAlbumsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		829688CA2143CF750063B7C4 /* VolumioAlbumsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumioAlbumsUITests.swift; sourceTree = "<group>"; };
 		829688CC2143CF750063B7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9842ACEF4340F71C62D95F62 /* Pods_VolumioAlbums.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VolumioAlbums.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C22798E25A96E31571B4D488 /* Pods-VolumioAlbums.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolumioAlbums.release.xcconfig"; path = "../Pods/Target Support Files/Pods-VolumioAlbums/Pods-VolumioAlbums.release.xcconfig"; sourceTree = "<group>"; };
+		ECA65154FE5D148C811A064B /* Pods-VolumioAlbums.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolumioAlbums.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-VolumioAlbums/Pods-VolumioAlbums.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FE0D662672D36A40637624 /* Pods_VolumioAlbums.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15C1ACDF169A10A00C0348AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECA65154FE5D148C811A064B /* Pods-VolumioAlbums.debug.xcconfig */,
+				C22798E25A96E31571B4D488 /* Pods-VolumioAlbums.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2E31C4842DBF7BB0610DB4CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9842ACEF4340F71C62D95F62 /* Pods_VolumioAlbums.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8296889E2143CF740063B7C4 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				829688BE2143CF750063B7C4 /* VolumioAlbumsTests */,
 				829688C92143CF750063B7C4 /* VolumioAlbumsUITests */,
 				829688A82143CF740063B7C4 /* Products */,
+				15C1ACDF169A10A00C0348AA /* Pods */,
+				2E31C4842DBF7BB0610DB4CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 829688CF2143CF750063B7C4 /* Build configuration list for PBXNativeTarget "VolumioAlbums" */;
 			buildPhases = (
+				56CBF44A1E2F36E516081FBA /* [CP] Check Pods Manifest.lock */,
 				829688A32143CF740063B7C4 /* Sources */,
 				829688A42143CF740063B7C4 /* Frameworks */,
 				829688A52143CF740063B7C4 /* Resources */,
+				CB480B7C997DBFCAF972FBAF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +276,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56CBF44A1E2F36E516081FBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VolumioAlbums-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB480B7C997DBFCAF972FBAF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-VolumioAlbums/Pods-VolumioAlbums-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-VolumioAlbums/Pods-VolumioAlbums-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		829688A32143CF740063B7C4 /* Sources */ = {
@@ -428,6 +499,7 @@
 		};
 		829688D02143CF750063B7C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECA65154FE5D148C811A064B /* Pods-VolumioAlbums.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -445,6 +517,7 @@
 		};
 		829688D12143CF750063B7C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C22798E25A96E31571B4D488 /* Pods-VolumioAlbums.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
