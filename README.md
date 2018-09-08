@@ -1,2 +1,2 @@
 # VolumioAlbums
-Volumio client centered about album playback
+Volumio client centered around album playback
