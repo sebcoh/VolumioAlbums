@@ -20,6 +20,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func genresTapped(_ sender: Any) {
+    }
+    
+    @IBAction func artistsTapped(_ sender: Any) {
+        
+        
+        
+        let bvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrowseViewController") as! BrowseViewController
+        bvc.setup(type: Artist.self)
+        self.present(bvc, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func albumsTapped(_ sender: Any) {
+    }
 }
 

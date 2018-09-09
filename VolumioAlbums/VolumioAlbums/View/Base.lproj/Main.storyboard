@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VolumioAlbums" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dya-a4-P8U">
+                                <rect key="frame" x="16" y="20" width="50" height="30"/>
+                                <state key="normal" title="Genres"/>
+                                <connections>
+                                    <action selector="genresTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7b9-fb-LKw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYx-Q8-6Xp">
+                                <rect key="frame" x="16" y="58" width="45" height="30"/>
+                                <state key="normal" title="Artists"/>
+                                <connections>
+                                    <action selector="artistsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uYT-mH-lfc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uP0-Fp-2xW">
+                                <rect key="frame" x="16" y="96" width="52" height="30"/>
+                                <state key="normal" title="Albums"/>
+                                <connections>
+                                    <action selector="albumsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E4q-Nx-ZTW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uP0-Fp-2xW" firstAttribute="top" secondItem="WYx-Q8-6Xp" secondAttribute="bottom" constant="8" id="1Dr-SV-knd"/>
+                            <constraint firstItem="WYx-Q8-6Xp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8Cz-76-iBS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WYx-Q8-6Xp" secondAttribute="trailing" id="Qb8-I8-sXp"/>
+                            <constraint firstItem="uP0-Fp-2xW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WeS-C2-Ceb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dya-a4-P8U" secondAttribute="trailing" id="dqw-fb-sUz"/>
+                            <constraint firstItem="Dya-a4-P8U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mfX-ZU-fHI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uP0-Fp-2xW" secondAttribute="trailing" id="qtJ-1s-Ors"/>
+                            <constraint firstItem="WYx-Q8-6Xp" firstAttribute="top" secondItem="Dya-a4-P8U" secondAttribute="bottom" constant="8" id="wj7-rU-s4o"/>
+                            <constraint firstItem="Dya-a4-P8U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zZt-U3-xeA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Browse View Controller-->
+        <scene sceneID="Kkk-Sl-89o">
+            <objects>
+                <collectionViewController storyboardIdentifier="BrowseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q9l-YC-kUi" customClass="BrowseViewController" customModule="VolumioAlbums" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gXA-YQ-yoc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x0r-nl-fby">
+                            <size key="itemSize" width="150" height="200"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="defaultCell" id="MPr-mE-7Rz" customClass="AlbumCoverCollectionViewCell" customModule="WStest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="a2164104584_16.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="w9Q-dC-lKj">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="w9Q-dC-lKj" secondAttribute="height" multiplier="1:1" id="5rV-cH-ssU"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Z1-vy-hIZ">
+                                            <rect key="frame" x="0.0" y="150" width="150" height="25"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NE-T2-Yd5">
+                                            <rect key="frame" x="0.0" y="175" width="150" height="25"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="3Z1-vy-hIZ" firstAttribute="leading" secondItem="MPr-mE-7Rz" secondAttribute="leading" id="26s-l2-o2K"/>
+                                    <constraint firstItem="9NE-T2-Yd5" firstAttribute="leading" secondItem="MPr-mE-7Rz" secondAttribute="leading" id="2A7-B0-MJQ"/>
+                                    <constraint firstItem="9NE-T2-Yd5" firstAttribute="top" secondItem="3Z1-vy-hIZ" secondAttribute="bottom" id="7oq-kd-b5K"/>
+                                    <constraint firstItem="w9Q-dC-lKj" firstAttribute="top" secondItem="MPr-mE-7Rz" secondAttribute="top" id="Crq-zK-6Bs"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Z1-vy-hIZ" secondAttribute="trailing" id="Dul-iL-lpR"/>
+                                    <constraint firstItem="3Z1-vy-hIZ" firstAttribute="top" secondItem="w9Q-dC-lKj" secondAttribute="bottom" id="OOk-RT-Vnd"/>
+                                    <constraint firstAttribute="trailing" secondItem="w9Q-dC-lKj" secondAttribute="trailing" id="QB6-iz-ZgE"/>
+                                    <constraint firstItem="w9Q-dC-lKj" firstAttribute="leading" secondItem="MPr-mE-7Rz" secondAttribute="leading" id="bzf-Pk-446"/>
+                                    <constraint firstAttribute="trailing" secondItem="9NE-T2-Yd5" secondAttribute="trailing" id="iHT-dA-1Cg"/>
+                                    <constraint firstAttribute="bottom" secondItem="9NE-T2-Yd5" secondAttribute="bottom" id="kuu-QM-Wnk"/>
+                                    <constraint firstItem="9NE-T2-Yd5" firstAttribute="height" secondItem="3Z1-vy-hIZ" secondAttribute="height" id="xki-qd-dgS"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="albumArt" destination="w9Q-dC-lKj" id="QFy-PT-5gT"/>
+                                    <outlet property="albumLabel" destination="9NE-T2-Yd5" id="7ny-zM-8Qd"/>
+                                    <outlet property="artistLabel" destination="3Z1-vy-hIZ" id="c3X-O9-JI4"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="q9l-YC-kUi" id="g8M-T1-FfW"/>
+                            <outlet property="delegate" destination="q9l-YC-kUi" id="wzb-Vb-dHA"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Htl-wf-TQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="713" y="32"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="a2164104584_16.jpg" width="16" height="16"/>
+    </resources>
+</document>

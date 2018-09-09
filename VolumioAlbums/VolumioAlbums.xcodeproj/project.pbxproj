@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822629E5214401030047692C /* VolumioClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822629E4214401030047692C /* VolumioClient.swift */; };
+		822629EB2144017D0047692C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822629E72144017C0047692C /* Category.swift */; };
+		822629EC2144017D0047692C /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822629E82144017C0047692C /* Artist.swift */; };
+		822629ED2144017D0047692C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822629E92144017C0047692C /* Album.swift */; };
+		822629EE2144017D0047692C /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822629EA2144017D0047692C /* Genre.swift */; };
+		822629F1214401CA0047692C /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822629F0214401CA0047692C /* ParseHelper.swift */; };
+		822629F421454AA30047692C /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822629F321454AA30047692C /* BrowseViewController.swift */; };
+		822629F821454B4F0047692C /* AlbumCoverFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822629F621454B4E0047692C /* AlbumCoverFlowLayout.swift */; };
+		822629F921454B4F0047692C /* AlbumCoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822629F721454B4E0047692C /* AlbumCoverCollectionViewCell.swift */; };
 		829688AB2143CF740063B7C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829688AA2143CF740063B7C4 /* AppDelegate.swift */; };
 		829688AD2143CF740063B7C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829688AC2143CF740063B7C4 /* ViewController.swift */; };
 		829688B02143CF740063B7C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829688AE2143CF740063B7C4 /* Main.storyboard */; };
@@ -35,6 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		822629E4214401030047692C /* VolumioClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumioClient.swift; sourceTree = "<group>"; };
+		822629E72144017C0047692C /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		822629E82144017C0047692C /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		822629E92144017C0047692C /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		822629EA2144017D0047692C /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		822629F0214401CA0047692C /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
+		822629F321454AA30047692C /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		822629F621454B4E0047692C /* AlbumCoverFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCoverFlowLayout.swift; sourceTree = "<group>"; };
+		822629F721454B4E0047692C /* AlbumCoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCoverCollectionViewCell.swift; sourceTree = "<group>"; };
 		829688A72143CF740063B7C4 /* VolumioAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolumioAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		829688AA2143CF740063B7C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		829688AC2143CF740063B7C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +114,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		822629E3214400EE0047692C /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				822629E4214401030047692C /* VolumioClient.swift */,
+			);
+			path = Backend;
+			sourceTree = "<group>";
+		};
+		822629E62144016D0047692C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				822629EF214401B80047692C /* Helpers */,
+				822629E82144017C0047692C /* Artist.swift */,
+				822629E92144017C0047692C /* Album.swift */,
+				822629EA2144017D0047692C /* Genre.swift */,
+				822629E72144017C0047692C /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		822629EF214401B80047692C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				822629F0214401CA0047692C /* ParseHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		822629F2214401F70047692C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				822629F521454B420047692C /* CollectionView */,
+				829688AE2143CF740063B7C4 /* Main.storyboard */,
+				829688B32143CF750063B7C4 /* LaunchScreen.storyboard */,
+				829688AC2143CF740063B7C4 /* ViewController.swift */,
+				822629F321454AA30047692C /* BrowseViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		822629F521454B420047692C /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				822629F621454B4E0047692C /* AlbumCoverFlowLayout.swift */,
+				822629F721454B4E0047692C /* AlbumCoverCollectionViewCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		8296889E2143CF740063B7C4 = {
 			isa = PBXGroup;
 			children = (
@@ -122,11 +189,11 @@
 			isa = PBXGroup;
 			children = (
 				829688AA2143CF740063B7C4 /* AppDelegate.swift */,
-				829688AC2143CF740063B7C4 /* ViewController.swift */,
-				829688AE2143CF740063B7C4 /* Main.storyboard */,
-				829688B12143CF750063B7C4 /* Assets.xcassets */,
-				829688B32143CF750063B7C4 /* LaunchScreen.storyboard */,
 				829688B62143CF750063B7C4 /* Info.plist */,
+				822629E62144016D0047692C /* Model */,
+				822629E3214400EE0047692C /* Backend */,
+				822629F2214401F70047692C /* View */,
+				829688B12143CF750063B7C4 /* Assets.xcassets */,
 			);
 			path = VolumioAlbums;
 			sourceTree = "<group>";
@@ -328,7 +395,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				829688AD2143CF740063B7C4 /* ViewController.swift in Sources */,
+				822629F921454B4F0047692C /* AlbumCoverCollectionViewCell.swift in Sources */,
+				822629F821454B4F0047692C /* AlbumCoverFlowLayout.swift in Sources */,
+				822629E5214401030047692C /* VolumioClient.swift in Sources */,
 				829688AB2143CF740063B7C4 /* AppDelegate.swift in Sources */,
+				822629EC2144017D0047692C /* Artist.swift in Sources */,
+				822629EB2144017D0047692C /* Category.swift in Sources */,
+				822629ED2144017D0047692C /* Album.swift in Sources */,
+				822629F421454AA30047692C /* BrowseViewController.swift in Sources */,
+				822629EE2144017D0047692C /* Genre.swift in Sources */,
+				822629F1214401CA0047692C /* ParseHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
