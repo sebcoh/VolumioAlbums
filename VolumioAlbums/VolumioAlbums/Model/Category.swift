@@ -24,6 +24,17 @@ enum CategoryType {
         }
     }
     
+    var collectionCellId: String {
+        switch self {
+        case .album:
+            return "albumCell"
+        case .artist:
+            return "artistCell"
+        case .genre:
+            return "genreCell"
+        }
+    }
+    
     var next: CategoryType? {
         switch self {
         case .album:
@@ -32,6 +43,17 @@ enum CategoryType {
             return .album
         case .genre:
             return .artist
+        }
+    }
+    
+    var nextType: Category.Type? {
+        switch self {
+        case .album:
+            return nil
+        case .artist:
+            return Album.self
+        case .genre:
+            return Artist.self
         }
     }
 }

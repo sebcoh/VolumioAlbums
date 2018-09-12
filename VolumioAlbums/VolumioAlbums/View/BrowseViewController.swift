@@ -17,7 +17,7 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     var disposeBag = DisposeBag()
     
     var items: [Category] = []
-    var artists: [Artist] = []
+    var categoryType: CategoryType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +30,18 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
         }).disposed(by: disposeBag)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setup<T: Category>(type: T.Type) {
+        //this is very ugly, can't this be done without using Generics?
+        categoryType = T.categoryType
+        client.fetchCategoryItems().subscribe(onNext: { (items: [T]) in
+            self.items = items
+            self.collectionView?.reloadData()
+        }).disposed(by: disposeBag)
     }
     
-    func setup<T: Category>(type: T.Type) {
-        client.fetchCategoryItems().subscribe(onNext: { (items: [T]) in
+    func drillDown<T: Category, U: Category>(item: T, nextType: U.Type) {
+        categoryType = U.categoryType
+        client.drillDown(item: item).subscribe(onNext: { (items: [U]) in
             self.items = items
             self.collectionView?.reloadData()
         }).disposed(by: disposeBag)
@@ -57,35 +62,20 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCell", for: indexPath) as! AlbumCoverCollectionViewCell
-        let item = items[indexPath.row]
-        cell.artistLabel.text = item.title
-        cell.albumLabel.text = item.title
-        cell.albumArt.image = nil
-        
-        let url2 = URL(string: client.baseURL.absoluteURL.absoluteString + item.albumArt)
-        //let url = client.baseURL.absoluteURL.appendingPathExtension()
-        cell.albumArtURL = url2
-        
-//        let item = artists[indexPath.row]
-//        cell.artistLabel.text = item.title
-//        cell.albumLabel.text = nil
-        
-        cell.albumArtURL = URL(string: client.baseURL.absoluteURL.absoluteString + item.albumArt)
-        
-        return cell
+        return CollectionViewCellHelper.cellFor(item: items[indexPath.row], collectionView: collectionView, indexPath: indexPath)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let bvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrowseViewController") as! BrowseViewController
         
-        //probably create a method for requests and viewcontrollers of a type?
-        //when drilling down, just use the contained uri, and the drilldown type ..
-        /*
-         let item = items[indexPath.row]
-         let obs: Observable<item.categoryType> = client.fetchCategoryItems()
-            self.items = artists
-            self.collectionView?.reloadData()
-        }).disposed(by: disposeBag)*/
+        if let item = items[indexPath.row] as? Artist {
+            bvc.drillDown(item: item, nextType: Album.self)
+            self.navigationController?.pushViewController(bvc, animated: true)
+        }
+        
+        
+        
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
