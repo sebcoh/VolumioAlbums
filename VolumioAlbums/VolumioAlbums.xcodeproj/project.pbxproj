@@ -25,6 +25,7 @@
 		829688CB2143CF750063B7C4 /* VolumioAlbumsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829688CA2143CF750063B7C4 /* VolumioAlbumsUITests.swift */; };
 		8DD6EBA92146C52400B52069 /* CollectionViewCellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBA82146C52400B52069 /* CollectionViewCellHelper.swift */; };
 		8DD6EBAB2146C53B00B52069 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBAA2146C53B00B52069 /* BaseCollectionViewCell.swift */; };
+		8DD6EBAD2148D9B700B52069 /* BrowseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */; };
 		D0FE0D662672D36A40637624 /* Pods_VolumioAlbums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9842ACEF4340F71C62D95F62 /* Pods_VolumioAlbums.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		829688CC2143CF750063B7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DD6EBA82146C52400B52069 /* CollectionViewCellHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellHelper.swift; sourceTree = "<group>"; };
 		8DD6EBAA2146C53B00B52069 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseComponent.swift; sourceTree = "<group>"; };
 		9842ACEF4340F71C62D95F62 /* Pods_VolumioAlbums.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VolumioAlbums.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22798E25A96E31571B4D488 /* Pods-VolumioAlbums.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolumioAlbums.release.xcconfig"; path = "../Pods/Target Support Files/Pods-VolumioAlbums/Pods-VolumioAlbums.release.xcconfig"; sourceTree = "<group>"; };
 		ECA65154FE5D148C811A064B /* Pods-VolumioAlbums.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolumioAlbums.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-VolumioAlbums/Pods-VolumioAlbums.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				822629F621454B4E0047692C /* AlbumCoverFlowLayout.swift */,
 				822629F721454B4E0047692C /* AlbumCoverCollectionViewCell.swift */,
 				8DD6EBAA2146C53B00B52069 /* BaseCollectionViewCell.swift */,
+				8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				822629EC2144017D0047692C /* Artist.swift in Sources */,
 				822629EB2144017D0047692C /* Category.swift in Sources */,
 				822629ED2144017D0047692C /* Album.swift in Sources */,
+				8DD6EBAD2148D9B700B52069 /* BrowseComponent.swift in Sources */,
 				822629F421454AA30047692C /* BrowseViewController.swift in Sources */,
 				822629EE2144017D0047692C /* Genre.swift in Sources */,
 				8DD6EBAB2146C53B00B52069 /* BaseCollectionViewCell.swift in Sources */,

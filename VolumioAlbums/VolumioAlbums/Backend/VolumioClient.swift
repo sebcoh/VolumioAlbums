@@ -101,20 +101,43 @@ class VolumioClient {
     }
 
     
-    func fetchCategoryItems<T: Category>() -> Observable<[T]> {
-        let subject = PublishSubject<[T]>()
+//    func fetchCategoryItems<T: Category>() -> Observable<[T]> {
+//        let subject = PublishSubject<[T]>()
+//        self.connected.asObservable().filter { connected -> Bool in
+//            connected
+//            }.subscribe(onNext: {[weak self] _ in
+//                self?.manager.defaultSocket.emit("browseLibrary", with: [["uri": T.categoryType.request]])
+//                self?.manager.defaultSocket.once("pushBrowseLibrary") {(data, _) in
+//                    let items: [T] = ParseHelper.decodeItems(input: data)
+//                    subject.onNext(items)
+//                    subject.onCompleted()
+//                }
+//            }).disposed(by: bag)
+//        return subject.asObservable()
+//    }
+
+    func fetchCategoryItems<T: Category, U:Category>(item: T?) -> Observable<[U]> {
+        let query: String
+        if let item = item {
+            query = item.uri
+        } else {
+            query = U.categoryType.request
+        }
+        
+        let subject = PublishSubject<[U]>()
         self.connected.asObservable().filter { connected -> Bool in
             connected
             }.subscribe(onNext: {[weak self] _ in
-                self?.manager.defaultSocket.emit("browseLibrary", with: [["uri": T.categoryType.request]])
+                self?.manager.defaultSocket.emit("browseLibrary", with: [["uri": query]])
                 self?.manager.defaultSocket.once("pushBrowseLibrary") {(data, _) in
-                    let items: [T] = ParseHelper.decodeItems(input: data)
+                    let items: [U] = ParseHelper.decodeItems(input: data)
                     subject.onNext(items)
                     subject.onCompleted()
                 }
             }).disposed(by: bag)
         return subject.asObservable()
     }
+
     
     func drillDown<T: Category, U:Category>(item: T) -> Observable<[U]> {
         let subject = PublishSubject<[U]>()

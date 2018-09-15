@@ -61,6 +61,8 @@ enum CategoryType {
 protocol Category: Codable {
     static var categoryType: CategoryType {get}
     
+    static func browseComponent(parentItem: Category?) -> BrowseComponent!
+    
     var title: String {get}
     var uri: String {get}
     var type: String {get}

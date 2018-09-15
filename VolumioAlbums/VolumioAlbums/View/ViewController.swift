@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        VolumioClient.shared
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -35,7 +34,7 @@ class ViewController: UIViewController {
     
     private func pushViewController<T: Category>(type: T.Type) {
         let bvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrowseViewController") as! BrowseViewController
-        bvc.setup(type: T.self)
+        bvc.setup(type: T.self, item: nil)
         let navCon = UINavigationController(rootViewController: bvc)
         self.present(navCon, animated: true, completion: nil)
     }

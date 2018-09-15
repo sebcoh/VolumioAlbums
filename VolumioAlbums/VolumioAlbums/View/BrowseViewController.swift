@@ -19,6 +19,8 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     var items: [Category] = []
     var categoryType: CategoryType!
     
+    var component: BrowseComponent!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,13 +32,13 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
         }).disposed(by: disposeBag)
     }
     
-    func setup<T: Category>(type: T.Type) {
-        //this is very ugly, can't this be done without using Generics?
-        categoryType = T.categoryType
-        client.fetchCategoryItems().subscribe(onNext: { (items: [T]) in
+    func setup<T: Category>(type: T.Type, item: T?) {
+        
+        component = T.browseComponent(parentItem: item)//AlbumBrowseComponent(parentItem: item)
+        component.fetchItems { (items) in
             self.items = items
             self.collectionView?.reloadData()
-        }).disposed(by: disposeBag)
+        }
     }
     
     func drillDown<T: Category, U: Category>(item: T, nextType: U.Type) {
@@ -62,8 +64,10 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return CollectionViewCellHelper.cellFor(item: items[indexPath.row], collectionView: collectionView, indexPath: indexPath)
+//        return CollectionViewCellHelper.cellFor(item: items[indexPath.row], collectionView: collectionView, indexPath: indexPath)
+        return component.cellFor(item: items[indexPath.row], collectionView: collectionView, indexPath: indexPath)!
     }
+    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let bvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrowseViewController") as! BrowseViewController
@@ -72,10 +76,6 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
             bvc.drillDown(item: item, nextType: Album.self)
             self.navigationController?.pushViewController(bvc, animated: true)
         }
-        
-        
-        
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
