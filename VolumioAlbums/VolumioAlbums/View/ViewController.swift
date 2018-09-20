@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     
     private func pushViewController<T: Category>(type: T.Type) {
         let bvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrowseViewController") as! BrowseViewController
-        bvc.setup(type: T.self, item: nil)
+        bvc.setup(type: T.self)
         let navCon = UINavigationController(rootViewController: bvc)
         self.present(navCon, animated: true, completion: nil)
     }

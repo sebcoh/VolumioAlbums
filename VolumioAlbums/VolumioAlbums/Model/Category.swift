@@ -45,17 +45,6 @@ enum CategoryType {
             return .artist
         }
     }
-    
-    var nextType: Category.Type? {
-        switch self {
-        case .album:
-            return nil
-        case .artist:
-            return Album.self
-        case .genre:
-            return Artist.self
-        }
-    }
 }
 
 protocol Category: Codable {

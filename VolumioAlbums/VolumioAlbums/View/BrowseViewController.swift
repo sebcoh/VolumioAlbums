@@ -32,9 +32,16 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
         }).disposed(by: disposeBag)
     }
     
-    func setup<T: Category>(type: T.Type, item: T?) {
-        
-        component = T.browseComponent(parentItem: item)//AlbumBrowseComponent(parentItem: item)
+    func setup(parentItem: Category) {
+        component = type(of: parentItem).browseComponent(parentItem: parentItem)
+        component.fetchItems { (items) in
+            self.items = items
+            self.collectionView?.reloadData()
+        }
+    }
+    
+    func setup<T: Category>(type: T.Type) {
+        component = T.browseComponent(parentItem: nil)
         component.fetchItems { (items) in
             self.items = items
             self.collectionView?.reloadData()
@@ -64,7 +71,6 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        return CollectionViewCellHelper.cellFor(item: items[indexPath.row], collectionView: collectionView, indexPath: indexPath)
         return component.cellFor(item: items[indexPath.row], collectionView: collectionView, indexPath: indexPath)!
     }
     
@@ -72,10 +78,8 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let bvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrowseViewController") as! BrowseViewController
         
-        if let item = items[indexPath.row] as? Artist {
-            bvc.drillDown(item: item, nextType: Album.self)
-            self.navigationController?.pushViewController(bvc, animated: true)
-        }
+        bvc.setup(parentItem: items[indexPath.row])    
+        self.navigationController?.pushViewController(bvc, animated: true)
     }
     
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {

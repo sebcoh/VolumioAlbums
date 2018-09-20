@@ -23,6 +23,8 @@
 		829688B52143CF750063B7C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829688B32143CF750063B7C4 /* LaunchScreen.storyboard */; };
 		829688C02143CF750063B7C4 /* VolumioAlbumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829688BF2143CF750063B7C4 /* VolumioAlbumsTests.swift */; };
 		829688CB2143CF750063B7C4 /* VolumioAlbumsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829688CA2143CF750063B7C4 /* VolumioAlbumsUITests.swift */; };
+		8D75EBAF214D2CAF00E02AD2 /* AlbumBrowseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75EBAE214D2CAF00E02AD2 /* AlbumBrowseComponent.swift */; };
+		8D75EBB1214D2DB800E02AD2 /* ArtistBrowseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75EBB0214D2DB800E02AD2 /* ArtistBrowseComponent.swift */; };
 		8DD6EBA92146C52400B52069 /* CollectionViewCellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBA82146C52400B52069 /* CollectionViewCellHelper.swift */; };
 		8DD6EBAB2146C53B00B52069 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBAA2146C53B00B52069 /* BaseCollectionViewCell.swift */; };
 		8DD6EBAD2148D9B700B52069 /* BrowseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */; };
@@ -69,6 +71,8 @@
 		829688C62143CF750063B7C4 /* VolumioAlbumsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolumioAlbumsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		829688CA2143CF750063B7C4 /* VolumioAlbumsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumioAlbumsUITests.swift; sourceTree = "<group>"; };
 		829688CC2143CF750063B7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D75EBAE214D2CAF00E02AD2 /* AlbumBrowseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBrowseComponent.swift; sourceTree = "<group>"; };
+		8D75EBB0214D2DB800E02AD2 /* ArtistBrowseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistBrowseComponent.swift; sourceTree = "<group>"; };
 		8DD6EBA82146C52400B52069 /* CollectionViewCellHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellHelper.swift; sourceTree = "<group>"; };
 		8DD6EBAA2146C53B00B52069 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseComponent.swift; sourceTree = "<group>"; };
@@ -163,11 +167,11 @@
 		822629F521454B420047692C /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				8D75EBAD214D2C7000E02AD2 /* BrowseComponents */,
 				8DD6EBA82146C52400B52069 /* CollectionViewCellHelper.swift */,
 				822629F621454B4E0047692C /* AlbumCoverFlowLayout.swift */,
 				822629F721454B4E0047692C /* AlbumCoverCollectionViewCell.swift */,
 				8DD6EBAA2146C53B00B52069 /* BaseCollectionViewCell.swift */,
-				8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -223,6 +227,16 @@
 				829688CC2143CF750063B7C4 /* Info.plist */,
 			);
 			path = VolumioAlbumsUITests;
+			sourceTree = "<group>";
+		};
+		8D75EBAD214D2C7000E02AD2 /* BrowseComponents */ = {
+			isa = PBXGroup;
+			children = (
+				8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */,
+				8D75EBAE214D2CAF00E02AD2 /* AlbumBrowseComponent.swift */,
+				8D75EBB0214D2DB800E02AD2 /* ArtistBrowseComponent.swift */,
+			);
+			path = BrowseComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +419,8 @@
 			files = (
 				8DD6EBA92146C52400B52069 /* CollectionViewCellHelper.swift in Sources */,
 				829688AD2143CF740063B7C4 /* ViewController.swift in Sources */,
+				8D75EBB1214D2DB800E02AD2 /* ArtistBrowseComponent.swift in Sources */,
+				8D75EBAF214D2CAF00E02AD2 /* AlbumBrowseComponent.swift in Sources */,
 				822629F921454B4F0047692C /* AlbumCoverCollectionViewCell.swift in Sources */,
 				822629F821454B4F0047692C /* AlbumCoverFlowLayout.swift in Sources */,
 				822629E5214401030047692C /* VolumioClient.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 struct Artist: Category {
     static func browseComponent(parentItem: Category?) -> BrowseComponent! {
-        return nil
+        return ArtistBrowseComponent(parentItem: parentItem)
     }
     
     
