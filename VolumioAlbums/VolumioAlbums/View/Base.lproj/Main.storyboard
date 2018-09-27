@@ -59,7 +59,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Browse View Controller-->
+        <!--Title-->
         <scene sceneID="Kkk-Sl-89o">
             <objects>
                 <collectionViewController storyboardIdentifier="BrowseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q9l-YC-kUi" customClass="BrowseViewController" customModule="VolumioAlbums" customModuleProvider="target" sceneMemberID="viewController">
@@ -218,6 +218,11 @@
                             <outlet property="delegate" destination="q9l-YC-kUi" id="wzb-Vb-dHA"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="Ayn-Qa-wj7">
+                        <barButtonItem key="rightBarButtonItem" title="Toggle Layout" id="dbq-7X-Uj4"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Htl-wf-TQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

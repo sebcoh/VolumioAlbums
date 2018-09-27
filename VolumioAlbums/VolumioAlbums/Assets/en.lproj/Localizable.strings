@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  VolumioAlbums
+
+  Created by Sebastian Cohausz on 21.09.18.
+  Copyright © 2018 Sebastian Cohausz. All rights reserved.
+*/
+"albums" = "Albums";
+"genres" = "Genres";
+"artists" = "Artists";
+"tracks" = "Tracks";

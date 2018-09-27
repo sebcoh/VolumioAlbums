@@ -12,6 +12,8 @@ enum CategoryType {
     case artist
     case album
     case genre
+    case track
+    
     
     var request: String {
         switch self {
@@ -21,7 +23,11 @@ enum CategoryType {
             return "artists://"
         case .genre:
             return "genres://"
+        case .track:
+            return "tracks://"
         }
+        
+        
     }
     
     var collectionCellId: String {
@@ -32,17 +38,21 @@ enum CategoryType {
             return "artistCell"
         case .genre:
             return "genreCell"
+        case .track:
+            return "trackCell"
         }
     }
     
-    var next: CategoryType? {
+    var title: String {
         switch self {
         case .album:
-            return nil
+            return R.string.localizable.albums()
         case .artist:
-            return .album
+            return R.string.localizable.artists()
         case .genre:
-            return .artist
+            return R.string.localizable.genres()
+        case .track:
+            return R.string.localizable.tracks()
         }
     }
 }
@@ -51,6 +61,7 @@ protocol Category: Codable {
     static var categoryType: CategoryType {get}
     
     static func browseComponent(parentItem: Category?) -> BrowseComponent!
+    static func nextType() -> Category.Type?
     
     var title: String {get}
     var uri: String {get}

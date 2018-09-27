@@ -9,7 +9,11 @@
 import Foundation
 struct Genre: Category {
     static func browseComponent(parentItem: Category?) -> BrowseComponent! {
-        return nil
+        return GenreBrowseComponent(parentItem: parentItem)
+    }
+    
+    static func nextType() -> Category.Type? {
+        return Artist.self
     }
     
     let title: String
@@ -27,6 +31,5 @@ struct Genre: Category {
     }
     
     static var categoryType: CategoryType = .genre
-    
-    
+   
 }

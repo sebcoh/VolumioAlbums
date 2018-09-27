@@ -1,4 +1,7 @@
 PODS:
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
   - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
@@ -7,23 +10,28 @@ PODS:
   - Starscream (3.0.5)
 
 DEPENDENCIES:
+  - R.swift (~> 4.0)
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
   - Socket.IO-Client-Swift (~> 13.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - R.swift
+    - R.swift.Library
     - RxCocoa
     - RxSwift
     - Socket.IO-Client-Swift
     - Starscream
 
 SPEC CHECKSUMS:
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   Socket.IO-Client-Swift: b94943e2fb916fe2f95244b9ed21828634002280
   Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
 
-PODFILE CHECKSUM: a9b06f81efbc3de28ad9e9d53cef7ab2c21fbcb6
+PODFILE CHECKSUM: e2218864ff54aff3843bf8ec4c6904ada0d3cd66
 
 COCOAPODS: 1.5.3

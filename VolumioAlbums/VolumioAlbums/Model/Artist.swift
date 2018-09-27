@@ -12,7 +12,9 @@ struct Artist: Category {
         return ArtistBrowseComponent(parentItem: parentItem)
     }
     
-    
+    static func nextType() -> Category.Type? {
+        return Album.self
+    }
     
     let title: String
     let uri: String

@@ -16,6 +16,7 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     
     var disposeBag = DisposeBag()
     
+    @IBOutlet weak var customNavigationItem: UINavigationItem!
     var items: [Category] = []
     var categoryType: CategoryType!
     
@@ -33,28 +34,30 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     func setup(parentItem: Category) {
-        component = type(of: parentItem).browseComponent(parentItem: parentItem)
+        component = type(of: parentItem).nextType()!.browseComponent(parentItem: parentItem)
         component.fetchItems { (items) in
             self.items = items
+            print("items here with parent: \(self.items)")
             self.collectionView?.reloadData()
         }
+        self.navigationItem.title = parentItem.title
     }
     
     func setup<T: Category>(type: T.Type) {
         component = T.browseComponent(parentItem: nil)
         component.fetchItems { (items) in
             self.items = items
+            print("items here: \(self.items)")
             self.collectionView?.reloadData()
         }
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(Stream.close))
+        self.navigationItem.title = T.categoryType.title
     }
     
-    func drillDown<T: Category, U: Category>(item: T, nextType: U.Type) {
-        categoryType = U.categoryType
-        client.drillDown(item: item).subscribe(onNext: { (items: [U]) in
-            self.items = items
-            self.collectionView?.reloadData()
-        }).disposed(by: disposeBag)
+    func close() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
+    
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -78,7 +81,7 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let bvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrowseViewController") as! BrowseViewController
         
-        bvc.setup(parentItem: items[indexPath.row])    
+        bvc.setup(parentItem: items[indexPath.row])
         self.navigationController?.pushViewController(bvc, animated: true)
     }
     
