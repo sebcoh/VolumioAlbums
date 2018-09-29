@@ -18,9 +18,19 @@ struct Track: Category {
         return nil
     }
     
+    enum CodingKeys: String, CodingKey {
+        case title
+        case uri
+        case type
+        case service
+        case duration
+        case trackType
+        case trackNumber = "tracknumber"
+    }
+    
     var type: String
     
-    var albumArt: String
+    var albumArt: String = ""
     
     var service: String
     

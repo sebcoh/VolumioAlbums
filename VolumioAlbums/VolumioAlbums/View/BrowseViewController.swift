@@ -50,11 +50,11 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
             print("items here: \(self.items)")
             self.collectionView?.reloadData()
         }
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(Stream.close))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(close))
         self.navigationItem.title = T.categoryType.title
     }
     
-    func close() {
+    @objc func close() {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
