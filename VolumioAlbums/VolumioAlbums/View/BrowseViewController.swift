@@ -16,8 +16,11 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     
     var disposeBag = DisposeBag()
     
+    @IBOutlet weak var customNavigationItem: UINavigationItem!
     var items: [Category] = []
-    var artists: [Artist] = []
+    var categoryType: CategoryType!
+    
+    var component: BrowseComponent!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +33,31 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
         }).disposed(by: disposeBag)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setup(parentItem: Category) {
+        component = type(of: parentItem).nextType()!.browseComponent(parentItem: parentItem)
+        component.fetchItems { (items) in
+            self.items = items
+            print("items here with parent: \(self.items)")
+            self.collectionView?.reloadData()
+        }
+        self.navigationItem.title = parentItem.title
     }
     
     func setup<T: Category>(type: T.Type) {
-        client.fetchCategoryItems().subscribe(onNext: { (items: [T]) in
+        component = T.browseComponent(parentItem: nil)
+        component.fetchItems { (items) in
             self.items = items
+            print("items here: \(self.items)")
             self.collectionView?.reloadData()
-        }).disposed(by: disposeBag)
+        }
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(close))
+        self.navigationItem.title = T.categoryType.title
     }
+    
+    @objc func close() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -57,35 +74,15 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCell", for: indexPath) as! AlbumCoverCollectionViewCell
-        let item = items[indexPath.row]
-        cell.artistLabel.text = item.title
-        cell.albumLabel.text = item.title
-        cell.albumArt.image = nil
-        
-        let url2 = URL(string: client.baseURL.absoluteURL.absoluteString + item.albumArt)
-        //let url = client.baseURL.absoluteURL.appendingPathExtension()
-        cell.albumArtURL = url2
-        
-//        let item = artists[indexPath.row]
-//        cell.artistLabel.text = item.title
-//        cell.albumLabel.text = nil
-        
-        cell.albumArtURL = URL(string: client.baseURL.absoluteURL.absoluteString + item.albumArt)
-        
-        return cell
+        return component.cellFor(item: items[indexPath.row], collectionView: collectionView, indexPath: indexPath)!
     }
     
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let bvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrowseViewController") as! BrowseViewController
         
-        //probably create a method for requests and viewcontrollers of a type?
-        //when drilling down, just use the contained uri, and the drilldown type ..
-        /*
-         let item = items[indexPath.row]
-         let obs: Observable<item.categoryType> = client.fetchCategoryItems()
-            self.items = artists
-            self.collectionView?.reloadData()
-        }).disposed(by: disposeBag)*/
+        bvc.setup(parentItem: items[indexPath.row])
+        self.navigationController?.pushViewController(bvc, animated: true)
     }
     
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {

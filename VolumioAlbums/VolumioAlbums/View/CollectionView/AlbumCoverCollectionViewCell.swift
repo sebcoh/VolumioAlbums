@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class AlbumCoverCollectionViewCell: UICollectionViewCell {
+class AlbumCoverCollectionViewCell: BaseCollectionViewCell {
     override var isHighlighted: Bool {
         didSet {
             if (self.isHighlighted) {

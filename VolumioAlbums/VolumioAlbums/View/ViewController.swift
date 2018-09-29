@@ -21,19 +21,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func genresTapped(_ sender: Any) {
+        self.pushViewController(type: Genre.self)
     }
     
     @IBAction func artistsTapped(_ sender: Any) {
-        
-        
-        
-        let bvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrowseViewController") as! BrowseViewController
-        bvc.setup(type: Artist.self)
-        self.present(bvc, animated: true, completion: nil)
-        
+        self.pushViewController(type: Artist.self)
     }
     
     @IBAction func albumsTapped(_ sender: Any) {
+        self.pushViewController(type: Album.self)
+    }
+    
+    private func pushViewController<T: Category>(type: T.Type) {
+        let bvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrowseViewController") as! BrowseViewController
+        bvc.setup(type: T.self)
+        let navCon = UINavigationController(rootViewController: bvc)
+        self.present(navCon, animated: true, completion: nil)
     }
 }
 

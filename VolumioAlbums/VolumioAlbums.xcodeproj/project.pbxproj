@@ -23,6 +23,16 @@
 		829688B52143CF750063B7C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829688B32143CF750063B7C4 /* LaunchScreen.storyboard */; };
 		829688C02143CF750063B7C4 /* VolumioAlbumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829688BF2143CF750063B7C4 /* VolumioAlbumsTests.swift */; };
 		829688CB2143CF750063B7C4 /* VolumioAlbumsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829688CA2143CF750063B7C4 /* VolumioAlbumsUITests.swift */; };
+		8D038E392154B3C7003ECE53 /* GenreBrowseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D038E382154B3C7003ECE53 /* GenreBrowseComponent.swift */; };
+		8D038E3C2154B82C003ECE53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D038E3E2154B82C003ECE53 /* Localizable.strings */; };
+		8D20FD41215D30CE000965B3 /* TrackBrowseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D20FD40215D30CE000965B3 /* TrackBrowseComponent.swift */; };
+		8D75EBAF214D2CAF00E02AD2 /* AlbumBrowseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75EBAE214D2CAF00E02AD2 /* AlbumBrowseComponent.swift */; };
+		8D75EBB1214D2DB800E02AD2 /* ArtistBrowseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75EBB0214D2DB800E02AD2 /* ArtistBrowseComponent.swift */; };
+		8DC3D3D4215AC04B004AF6DA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3D3D3215AC04B004AF6DA /* R.generated.swift */; };
+		8DC3D3D6215AC431004AF6DA /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3D3D5215AC431004AF6DA /* Track.swift */; };
+		8DD6EBA92146C52400B52069 /* CollectionViewCellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBA82146C52400B52069 /* CollectionViewCellHelper.swift */; };
+		8DD6EBAB2146C53B00B52069 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBAA2146C53B00B52069 /* BaseCollectionViewCell.swift */; };
+		8DD6EBAD2148D9B700B52069 /* BrowseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */; };
 		D0FE0D662672D36A40637624 /* Pods_VolumioAlbums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9842ACEF4340F71C62D95F62 /* Pods_VolumioAlbums.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +76,16 @@
 		829688C62143CF750063B7C4 /* VolumioAlbumsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolumioAlbumsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		829688CA2143CF750063B7C4 /* VolumioAlbumsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumioAlbumsUITests.swift; sourceTree = "<group>"; };
 		829688CC2143CF750063B7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D038E382154B3C7003ECE53 /* GenreBrowseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreBrowseComponent.swift; sourceTree = "<group>"; };
+		8D038E3D2154B82C003ECE53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8D20FD40215D30CE000965B3 /* TrackBrowseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackBrowseComponent.swift; sourceTree = "<group>"; };
+		8D75EBAE214D2CAF00E02AD2 /* AlbumBrowseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBrowseComponent.swift; sourceTree = "<group>"; };
+		8D75EBB0214D2DB800E02AD2 /* ArtistBrowseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistBrowseComponent.swift; sourceTree = "<group>"; };
+		8DC3D3D3215AC04B004AF6DA /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		8DC3D3D5215AC431004AF6DA /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		8DD6EBA82146C52400B52069 /* CollectionViewCellHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellHelper.swift; sourceTree = "<group>"; };
+		8DD6EBAA2146C53B00B52069 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseComponent.swift; sourceTree = "<group>"; };
 		9842ACEF4340F71C62D95F62 /* Pods_VolumioAlbums.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VolumioAlbums.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22798E25A96E31571B4D488 /* Pods-VolumioAlbums.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolumioAlbums.release.xcconfig"; path = "../Pods/Target Support Files/Pods-VolumioAlbums/Pods-VolumioAlbums.release.xcconfig"; sourceTree = "<group>"; };
 		ECA65154FE5D148C811A064B /* Pods-VolumioAlbums.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolumioAlbums.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-VolumioAlbums/Pods-VolumioAlbums.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,10 +146,11 @@
 			isa = PBXGroup;
 			children = (
 				822629EF214401B80047692C /* Helpers */,
+				822629E72144017C0047692C /* Category.swift */,
 				822629E82144017C0047692C /* Artist.swift */,
 				822629E92144017C0047692C /* Album.swift */,
 				822629EA2144017D0047692C /* Genre.swift */,
-				822629E72144017C0047692C /* Category.swift */,
+				8DC3D3D5215AC431004AF6DA /* Track.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,8 +178,11 @@
 		822629F521454B420047692C /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				8D75EBAD214D2C7000E02AD2 /* BrowseComponents */,
+				8DD6EBA82146C52400B52069 /* CollectionViewCellHelper.swift */,
 				822629F621454B4E0047692C /* AlbumCoverFlowLayout.swift */,
 				822629F721454B4E0047692C /* AlbumCoverCollectionViewCell.swift */,
+				8DD6EBAA2146C53B00B52069 /* BaseCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -188,12 +212,12 @@
 		829688A92143CF740063B7C4 /* VolumioAlbums */ = {
 			isa = PBXGroup;
 			children = (
+				8DC3D3D2215AC033004AF6DA /* Assets */,
 				829688AA2143CF740063B7C4 /* AppDelegate.swift */,
 				829688B62143CF750063B7C4 /* Info.plist */,
 				822629E62144016D0047692C /* Model */,
 				822629E3214400EE0047692C /* Backend */,
 				822629F2214401F70047692C /* View */,
-				829688B12143CF750063B7C4 /* Assets.xcassets */,
 			);
 			path = VolumioAlbums;
 			sourceTree = "<group>";
@@ -216,6 +240,28 @@
 			path = VolumioAlbumsUITests;
 			sourceTree = "<group>";
 		};
+		8D75EBAD214D2C7000E02AD2 /* BrowseComponents */ = {
+			isa = PBXGroup;
+			children = (
+				8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */,
+				8D75EBAE214D2CAF00E02AD2 /* AlbumBrowseComponent.swift */,
+				8D75EBB0214D2DB800E02AD2 /* ArtistBrowseComponent.swift */,
+				8D038E382154B3C7003ECE53 /* GenreBrowseComponent.swift */,
+				8D20FD40215D30CE000965B3 /* TrackBrowseComponent.swift */,
+			);
+			path = BrowseComponents;
+			sourceTree = "<group>";
+		};
+		8DC3D3D2215AC033004AF6DA /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8DC3D3D3215AC04B004AF6DA /* R.generated.swift */,
+				829688B12143CF750063B7C4 /* Assets.xcassets */,
+				8D038E3E2154B82C003ECE53 /* Localizable.strings */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,6 +270,7 @@
 			buildConfigurationList = 829688CF2143CF750063B7C4 /* Build configuration list for PBXNativeTarget "VolumioAlbums" */;
 			buildPhases = (
 				56CBF44A1E2F36E516081FBA /* [CP] Check Pods Manifest.lock */,
+				8DC3D3D1215ABFF8004AF6DA /* R.swift */,
 				829688A32143CF740063B7C4 /* Sources */,
 				829688A42143CF740063B7C4 /* Frameworks */,
 				829688A52143CF740063B7C4 /* Resources */,
@@ -286,13 +333,16 @@
 				TargetAttributes = {
 					829688A62143CF740063B7C4 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					829688BA2143CF750063B7C4 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 829688A62143CF740063B7C4;
 					};
 					829688C52143CF750063B7C4 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 829688A62143CF740063B7C4;
 					};
 				};
@@ -323,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				829688B52143CF750063B7C4 /* LaunchScreen.storyboard in Resources */,
+				8D038E3C2154B82C003ECE53 /* Localizable.strings in Resources */,
 				829688B22143CF750063B7C4 /* Assets.xcassets in Resources */,
 				829688B02143CF740063B7C4 /* Main.storyboard in Resources */,
 			);
@@ -363,6 +414,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8DC3D3D1215ABFF8004AF6DA /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
+		};
 		CB480B7C997DBFCAF972FBAF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,6 +435,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-VolumioAlbums/Pods-VolumioAlbums-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
@@ -377,6 +443,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
@@ -394,16 +461,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD6EBA92146C52400B52069 /* CollectionViewCellHelper.swift in Sources */,
 				829688AD2143CF740063B7C4 /* ViewController.swift in Sources */,
+				8D75EBB1214D2DB800E02AD2 /* ArtistBrowseComponent.swift in Sources */,
+				8D75EBAF214D2CAF00E02AD2 /* AlbumBrowseComponent.swift in Sources */,
 				822629F921454B4F0047692C /* AlbumCoverCollectionViewCell.swift in Sources */,
 				822629F821454B4F0047692C /* AlbumCoverFlowLayout.swift in Sources */,
 				822629E5214401030047692C /* VolumioClient.swift in Sources */,
+				8D20FD41215D30CE000965B3 /* TrackBrowseComponent.swift in Sources */,
 				829688AB2143CF740063B7C4 /* AppDelegate.swift in Sources */,
 				822629EC2144017D0047692C /* Artist.swift in Sources */,
 				822629EB2144017D0047692C /* Category.swift in Sources */,
 				822629ED2144017D0047692C /* Album.swift in Sources */,
+				8DC3D3D4215AC04B004AF6DA /* R.generated.swift in Sources */,
+				8DD6EBAD2148D9B700B52069 /* BrowseComponent.swift in Sources */,
 				822629F421454AA30047692C /* BrowseViewController.swift in Sources */,
 				822629EE2144017D0047692C /* Genre.swift in Sources */,
+				8D038E392154B3C7003ECE53 /* GenreBrowseComponent.swift in Sources */,
+				8DD6EBAB2146C53B00B52069 /* BaseCollectionViewCell.swift in Sources */,
+				8DC3D3D6215AC431004AF6DA /* Track.swift in Sources */,
 				822629F1214401CA0047692C /* ParseHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +530,14 @@
 				829688B42143CF750063B7C4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8D038E3E2154B82C003ECE53 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D038E3D2154B82C003ECE53 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -586,7 +670,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sc.VolumioAlbums;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -604,7 +688,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sc.VolumioAlbums;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -623,7 +707,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sc.VolumioAlbumsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VolumioAlbums.app/VolumioAlbums";
 			};
@@ -643,7 +727,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sc.VolumioAlbumsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VolumioAlbums.app/VolumioAlbums";
 			};
@@ -662,7 +746,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sc.VolumioAlbumsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = VolumioAlbums;
 			};
@@ -681,7 +765,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sc.VolumioAlbumsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = VolumioAlbums;
 			};

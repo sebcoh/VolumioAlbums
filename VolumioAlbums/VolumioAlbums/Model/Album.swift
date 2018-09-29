@@ -8,6 +8,14 @@
 
 import Foundation
 struct Album: Category {
+    static func browseComponent(parentItem: Category?) -> BrowseComponent! {
+        return AlbumBrowseComponent(parentItem: parentItem)
+    }
+    
+    static func nextType() -> Category.Type? {
+        return Track.self
+    }
+    
     let artist: String
     let title: String
     let uri: String //relative location
