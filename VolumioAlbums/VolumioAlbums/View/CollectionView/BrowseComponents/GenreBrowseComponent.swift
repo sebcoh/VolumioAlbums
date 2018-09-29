@@ -24,4 +24,7 @@ struct GenreBrowseComponent: BrowseComponent {
             completion(items)
         }).disposed(by: disposeBag)
     }
+    func cellFor(item: Category, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell? {
+        return nil
+    }
 } 

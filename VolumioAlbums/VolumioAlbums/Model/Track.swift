@@ -19,6 +19,8 @@ struct Track: Category {
     }
     
     enum CodingKeys: String, CodingKey {
+        case artist
+        case album
         case title
         case uri
         case type
@@ -39,6 +41,8 @@ struct Track: Category {
     let trackType: String
     let trackNumber: Int
     let uri: String
+    let artist: String
+    let album: String
     
     
 }
