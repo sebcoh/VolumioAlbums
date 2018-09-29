@@ -14,6 +14,7 @@ protocol BrowseComponent {
     init(parentItem: Category?)
     func fetchItems(completion: @escaping ([Category]) -> ())
     func cellFor(item: Category, collectionView: UICollectionView, indexPath: IndexPath) -> BaseCollectionViewCell?
+    func cellFor(item: Category, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell?
 }
 
 extension BrowseComponent {

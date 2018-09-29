@@ -21,8 +21,17 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.file` struct is generated, and contains static references to 0 files.
+  /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
+    /// Resource file `a2212145730_16.jpg`.
+    static let a2212145730_16Jpg = Rswift.FileResource(bundle: R.hostingBundle, name: "a2212145730_16", pathExtension: "jpg")
+    
+    /// `bundle.url(forResource: "a2212145730_16", withExtension: "jpg")`
+    static func a2212145730_16Jpg(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.a2212145730_16Jpg
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     fileprivate init() {}
   }
   
@@ -31,8 +40,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 1 images.
   struct image {
+    /// Image `a2212145730_16.jpg`.
+    static let a2212145730_16Jpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "a2212145730_16.jpg")
+    
+    /// `UIImage(named: "a2212145730_16.jpg", bundle: ..., traitCollection: ...)`
+    static func a2212145730_16Jpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.a2212145730_16Jpg, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
@@ -41,8 +58,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `HeaderCell`.
+    static let headerCell: Rswift.ReuseIdentifier<AlbumTracksHeaderCell> = Rswift.ReuseIdentifier(identifier: "HeaderCell")
+    /// Reuse identifier `TrackCell`.
+    static let trackCell: Rswift.ReuseIdentifier<AlbumTracksTrackCell> = Rswift.ReuseIdentifier(identifier: "TrackCell")
     /// Reuse identifier `albumCell`.
     static let albumCell: Rswift.ReuseIdentifier<AlbumCoverCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "albumCell")
     /// Reuse identifier `artistCell`.
@@ -172,17 +193,24 @@ struct _R: Rswift.Validatable {
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = ViewController
       
+      let albumTracksViewController = StoryboardViewControllerResource<UIKit.UITableViewController>(identifier: "AlbumTracksViewController")
       let browseViewController = StoryboardViewControllerResource<BrowseViewController>(identifier: "BrowseViewController")
       let bundle = R.hostingBundle
       let name = "Main"
+      
+      func albumTracksViewController(_: Void = ()) -> UIKit.UITableViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: albumTracksViewController)
+      }
       
       func browseViewController(_: Void = ()) -> BrowseViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: browseViewController)
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "a2212145730_16.jpg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'a2212145730_16.jpg' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "a2164104584_16.jpg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'a2164104584_16.jpg' is used in storyboard 'Main', but couldn't be loaded.") }
         if _R.storyboard.main().browseViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'browseViewController' could not be loaded from storyboard 'Main' as 'BrowseViewController'.") }
+        if _R.storyboard.main().albumTracksViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'albumTracksViewController' could not be loaded from storyboard 'Main' as 'UIKit.UITableViewController'.") }
       }
       
       fileprivate init() {}
