@@ -33,7 +33,12 @@ struct TrackBrowseComponent: BrowseComponent {
         if indexPath.row == 0 {
             return headerCellFor(tableView: tableView)
         }
-        return UITableViewCell()
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.trackCell, for: indexPath) {
+            cell.textLabel?.text = item.title
+            return cell
+        }
+        return nil
     }
     
     func cellFor(item: Category, collectionView: UICollectionView, indexPath: IndexPath) -> BaseCollectionViewCell? {
@@ -42,8 +47,12 @@ struct TrackBrowseComponent: BrowseComponent {
     
     private func headerCellFor(tableView: UITableView) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.headerCell, for: IndexPath.init(item: 0, section: 0))
-        cell?.artistLabel.text = (parentItem as? Track)?.artist
-        cell?.albumTitleLabel.text = (parentItem as? Track)?.album 
+        cell?.artistLabel.text = (parentItem as? Album)?.artist
+        cell?.albumTitleLabel.text = (parentItem as? Album)?.title
+        if let albumArt = parentItem?.albumArt {
+            cell?.albumArtURL = URL(string: VolumioClient.shared.baseURL.absoluteURL.absoluteString + albumArt)    
+        }
+        
         return cell!
     }
 }

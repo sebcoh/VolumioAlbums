@@ -19,12 +19,29 @@ class AlbumTracksViewController: UITableViewController {
         })
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshList()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items?.count ?? 0
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return browseComponent!.cellFor(item: items![indexPath.row], tableView: tableView, indexPath: indexPath)!
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 100
+        } else {
+            return 44
+        }
     }
     
     

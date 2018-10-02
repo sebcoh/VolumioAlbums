@@ -26,6 +26,7 @@ extension BrowseComponent {
      - parameter indexPath: IndexPath, required for the collection view
      */
     func cellFor(item: Category, collectionView: UICollectionView, indexPath: IndexPath) -> BaseCollectionViewCell? {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Genre.categoryType.collectionCellId, for: indexPath) as! AlbumCoverCollectionViewCell
         cell.artistLabel.text = item.title
         cell.albumLabel.text = nil

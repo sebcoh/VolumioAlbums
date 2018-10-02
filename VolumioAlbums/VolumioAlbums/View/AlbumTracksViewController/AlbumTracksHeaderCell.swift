@@ -13,4 +13,24 @@ class AlbumTracksHeaderCell: UITableViewCell {
     @IBOutlet weak var albumArtBackgroundView: UIImageView!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var albumTitleLabel: UILabel!
+    
+    var albumArtURL: URL? {
+        didSet {
+            DispatchQueue.global().async { [weak self, theUrl = albumArtURL] in
+                let image: UIImage?
+                do {
+                    image = UIImage(data: try Data(contentsOf: (self?.albumArtURL)!))
+                    DispatchQueue.main.async {
+                        if (self?.albumArtURL == theUrl) {
+                            self?.albumArtView?.image = image
+                            self?.albumArtBackgroundView?.image = image
+                        }
+                    }
+                } catch {
+                    print("Error: data for \(String(describing: self?.albumArtURL?.absoluteString)) could not be fetched: \(error)")
+                }
+                
+            }
+        }
+    }
 }

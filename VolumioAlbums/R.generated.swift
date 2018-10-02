@@ -193,12 +193,12 @@ struct _R: Rswift.Validatable {
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = ViewController
       
-      let albumTracksViewController = StoryboardViewControllerResource<UIKit.UITableViewController>(identifier: "AlbumTracksViewController")
+      let albumTracksViewController = StoryboardViewControllerResource<AlbumTracksViewController>(identifier: "AlbumTracksViewController")
       let browseViewController = StoryboardViewControllerResource<BrowseViewController>(identifier: "BrowseViewController")
       let bundle = R.hostingBundle
       let name = "Main"
       
-      func albumTracksViewController(_: Void = ()) -> UIKit.UITableViewController? {
+      func albumTracksViewController(_: Void = ()) -> AlbumTracksViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: albumTracksViewController)
       }
       
@@ -210,7 +210,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "a2212145730_16.jpg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'a2212145730_16.jpg' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "a2164104584_16.jpg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'a2164104584_16.jpg' is used in storyboard 'Main', but couldn't be loaded.") }
         if _R.storyboard.main().browseViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'browseViewController' could not be loaded from storyboard 'Main' as 'BrowseViewController'.") }
-        if _R.storyboard.main().albumTracksViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'albumTracksViewController' could not be loaded from storyboard 'Main' as 'UIKit.UITableViewController'.") }
+        if _R.storyboard.main().albumTracksViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'albumTracksViewController' could not be loaded from storyboard 'Main' as 'AlbumTracksViewController'.") }
       }
       
       fileprivate init() {}

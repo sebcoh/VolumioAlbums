@@ -20,7 +20,7 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     var items: [Category] = []
     var categoryType: CategoryType!
     
-    var component: BrowseComponent!
+    var browseComponent: BrowseComponent!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,21 +33,18 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
         }).disposed(by: disposeBag)
     }
     
-    func setup(parentItem: Category) {
-        component = type(of: parentItem).nextType()!.browseComponent(parentItem: parentItem)
-        component.fetchItems { (items) in
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        browseComponent.fetchItems { (items) in
             self.items = items
-            print("items here with parent: \(self.items)")
             self.collectionView?.reloadData()
         }
-        self.navigationItem.title = parentItem.title
     }
     
     func setup<T: Category>(type: T.Type) {
-        component = T.browseComponent(parentItem: nil)
-        component.fetchItems { (items) in
+        browseComponent = T.browseComponent(parentItem: nil)
+        browseComponent.fetchItems { (items) in
             self.items = items
-            print("items here: \(self.items)")
             self.collectionView?.reloadData()
         }
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(close))
@@ -74,15 +71,14 @@ class BrowseViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return component.cellFor(item: items[indexPath.row], collectionView: collectionView, indexPath: indexPath)!
+        return browseComponent.cellFor(item: items[indexPath.row], collectionView: collectionView, indexPath: indexPath)!
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let bvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrowseViewController") as! BrowseViewController
-        
-        bvc.setup(parentItem: items[indexPath.row])
-        self.navigationController?.pushViewController(bvc, animated: true)
+        if let vc = NavigationHelper.viewControllerForParentItem(parentItem: items[indexPath.row]) {
+          self.navigationController?.pushViewController(vc, animated: true)  
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {

@@ -62,7 +62,7 @@ class VolumioClient {
             self.connected.value = false
         })
         manager.defaultSocket.onAny({ event in
-            print("--- onAny ---\n\(event)")
+            print("--- onAny ---")
         })
         
 //        manager.defaultSocket.on("pushState") { data, ack in
