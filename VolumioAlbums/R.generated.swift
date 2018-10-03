@@ -58,7 +58,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 9 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `HeaderCell`.
     static let headerCell: Rswift.ReuseIdentifier<AlbumTracksHeaderCell> = Rswift.ReuseIdentifier(identifier: "HeaderCell")
@@ -68,8 +68,16 @@ struct R: Rswift.Validatable {
     static let albumCell: Rswift.ReuseIdentifier<AlbumCoverCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "albumCell")
     /// Reuse identifier `artistCell`.
     static let artistCell: Rswift.ReuseIdentifier<AlbumCoverCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "artistCell")
+    /// Reuse identifier `controlsCell`.
+    static let controlsCell: Rswift.ReuseIdentifier<PlaybackControlsCell> = Rswift.ReuseIdentifier(identifier: "controlsCell")
     /// Reuse identifier `genreCell`.
     static let genreCell: Rswift.ReuseIdentifier<AlbumCoverCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "genreCell")
+    /// Reuse identifier `imageViewCell`.
+    static let imageViewCell: Rswift.ReuseIdentifier<PlaybackArtworkCell> = Rswift.ReuseIdentifier(identifier: "imageViewCell")
+    /// Reuse identifier `informationCell`.
+    static let informationCell: Rswift.ReuseIdentifier<PlaybackInformationCell> = Rswift.ReuseIdentifier(identifier: "informationCell")
+    /// Reuse identifier `playbackTrackCell`.
+    static let playbackTrackCell: Rswift.ReuseIdentifier<PlaybackTrackCell> = Rswift.ReuseIdentifier(identifier: "playbackTrackCell")
     
     fileprivate init() {}
   }
@@ -191,7 +199,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
+      typealias InitialController = UIKit.UINavigationController
       
       let albumTracksViewController = StoryboardViewControllerResource<AlbumTracksViewController>(identifier: "AlbumTracksViewController")
       let browseViewController = StoryboardViewControllerResource<BrowseViewController>(identifier: "BrowseViewController")

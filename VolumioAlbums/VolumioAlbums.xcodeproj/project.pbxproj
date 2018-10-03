@@ -38,6 +38,11 @@
 		8DD6EBA92146C52400B52069 /* CollectionViewCellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBA82146C52400B52069 /* CollectionViewCellHelper.swift */; };
 		8DD6EBAB2146C53B00B52069 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBAA2146C53B00B52069 /* BaseCollectionViewCell.swift */; };
 		8DD6EBAD2148D9B700B52069 /* BrowseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */; };
+		8DF6E38E2163D89B003E20BE /* PlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF6E38D2163D89B003E20BE /* PlaybackViewController.swift */; };
+		8DF6E3902163D8E4003E20BE /* PlaybackArtworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF6E38F2163D8E4003E20BE /* PlaybackArtworkCell.swift */; };
+		8DF6E3922163D8F6003E20BE /* PlaybackControlsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF6E3912163D8F6003E20BE /* PlaybackControlsCell.swift */; };
+		8DF6E3942163D91B003E20BE /* PlaybackInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF6E3932163D91B003E20BE /* PlaybackInformationCell.swift */; };
+		8DF6E3962163D93B003E20BE /* PlaybackTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF6E3952163D93B003E20BE /* PlaybackTrackCell.swift */; };
 		D0FE0D662672D36A40637624 /* Pods_VolumioAlbums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9842ACEF4340F71C62D95F62 /* Pods_VolumioAlbums.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +101,11 @@
 		8DD6EBA82146C52400B52069 /* CollectionViewCellHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellHelper.swift; sourceTree = "<group>"; };
 		8DD6EBAA2146C53B00B52069 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DD6EBAC2148D9B700B52069 /* BrowseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseComponent.swift; sourceTree = "<group>"; };
+		8DF6E38D2163D89B003E20BE /* PlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackViewController.swift; sourceTree = "<group>"; };
+		8DF6E38F2163D8E4003E20BE /* PlaybackArtworkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackArtworkCell.swift; sourceTree = "<group>"; };
+		8DF6E3912163D8F6003E20BE /* PlaybackControlsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlsCell.swift; sourceTree = "<group>"; };
+		8DF6E3932163D91B003E20BE /* PlaybackInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackInformationCell.swift; sourceTree = "<group>"; };
+		8DF6E3952163D93B003E20BE /* PlaybackTrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackTrackCell.swift; sourceTree = "<group>"; };
 		9842ACEF4340F71C62D95F62 /* Pods_VolumioAlbums.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VolumioAlbums.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22798E25A96E31571B4D488 /* Pods-VolumioAlbums.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolumioAlbums.release.xcconfig"; path = "../Pods/Target Support Files/Pods-VolumioAlbums/Pods-VolumioAlbums.release.xcconfig"; sourceTree = "<group>"; };
 		ECA65154FE5D148C811A064B /* Pods-VolumioAlbums.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolumioAlbums.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-VolumioAlbums/Pods-VolumioAlbums.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +186,7 @@
 		822629F2214401F70047692C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8DF6E38C2163D882003E20BE /* PlaybackViewController */,
 				8D20FD4C216007F5000965B3 /* AlbumTracksViewController */,
 				822629F521454B420047692C /* CollectionView */,
 				829688AE2143CF740063B7C4 /* Main.storyboard */,
@@ -291,6 +302,18 @@
 				8D038E3E2154B82C003ECE53 /* Localizable.strings */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		8DF6E38C2163D882003E20BE /* PlaybackViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8DF6E38D2163D89B003E20BE /* PlaybackViewController.swift */,
+				8DF6E38F2163D8E4003E20BE /* PlaybackArtworkCell.swift */,
+				8DF6E3912163D8F6003E20BE /* PlaybackControlsCell.swift */,
+				8DF6E3932163D91B003E20BE /* PlaybackInformationCell.swift */,
+				8DF6E3952163D93B003E20BE /* PlaybackTrackCell.swift */,
+			);
+			path = PlaybackViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,12 +522,16 @@
 				8D20FD4E2160080D000965B3 /* AlbumTracksHeaderCell.swift in Sources */,
 				8D75EBB1214D2DB800E02AD2 /* ArtistBrowseComponent.swift in Sources */,
 				8D75EBAF214D2CAF00E02AD2 /* AlbumBrowseComponent.swift in Sources */,
+				8DF6E3962163D93B003E20BE /* PlaybackTrackCell.swift in Sources */,
 				822629F921454B4F0047692C /* AlbumCoverCollectionViewCell.swift in Sources */,
 				8D20FD4B21600752000965B3 /* AlbumTracksViewController.swift in Sources */,
 				8D20FD502160081C000965B3 /* AlbumTracksTrackCell.swift in Sources */,
+				8DF6E3942163D91B003E20BE /* PlaybackInformationCell.swift in Sources */,
 				822629F821454B4F0047692C /* AlbumCoverFlowLayout.swift in Sources */,
 				822629E5214401030047692C /* VolumioClient.swift in Sources */,
+				8DF6E38E2163D89B003E20BE /* PlaybackViewController.swift in Sources */,
 				8D20FD41215D30CE000965B3 /* TrackBrowseComponent.swift in Sources */,
+				8DF6E3902163D8E4003E20BE /* PlaybackArtworkCell.swift in Sources */,
 				829688AB2143CF740063B7C4 /* AppDelegate.swift in Sources */,
 				822629EC2144017D0047692C /* Artist.swift in Sources */,
 				822629EB2144017D0047692C /* Category.swift in Sources */,
@@ -514,6 +541,7 @@
 				822629F421454AA30047692C /* BrowseViewController.swift in Sources */,
 				822629EE2144017D0047692C /* Genre.swift in Sources */,
 				8D038E392154B3C7003ECE53 /* GenreBrowseComponent.swift in Sources */,
+				8DF6E3922163D8F6003E20BE /* PlaybackControlsCell.swift in Sources */,
 				8DD6EBAB2146C53B00B52069 /* BaseCollectionViewCell.swift in Sources */,
 				8DC3D3D6215AC431004AF6DA /* Track.swift in Sources */,
 				822629F1214401CA0047692C /* ParseHelper.swift in Sources */,
