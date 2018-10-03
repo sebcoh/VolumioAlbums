@@ -16,11 +16,6 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.color` struct is generated, and contains static references to 0 colors.
-  struct color {
-    fileprivate init() {}
-  }
-  
   /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
     /// Resource file `a2212145730_16.jpg`.
@@ -35,11 +30,6 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.font` struct is generated, and contains static references to 0 fonts.
-  struct font {
-    fileprivate init() {}
-  }
-  
   /// This `R.image` struct is generated, and contains static references to 1 images.
   struct image {
     /// Image `a2212145730_16.jpg`.
@@ -50,11 +40,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.a2212145730_16Jpg, compatibleWith: traitCollection)
     }
     
-    fileprivate init() {}
-  }
-  
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
-  struct nib {
     fileprivate init() {}
   }
   
@@ -79,11 +64,6 @@ struct R: Rswift.Validatable {
     /// Reuse identifier `playbackTrackCell`.
     static let playbackTrackCell: Rswift.ReuseIdentifier<PlaybackTrackCell> = Rswift.ReuseIdentifier(identifier: "playbackTrackCell")
     
-    fileprivate init() {}
-  }
-  
-  /// This `R.segue` struct is generated, and contains static references to 0 view controllers.
-  struct segue {
     fileprivate init() {}
   }
   
@@ -180,20 +160,22 @@ struct _R: Rswift.Validatable {
     try storyboard.validate()
   }
   
-  struct nib {
-    fileprivate init() {}
-  }
-  
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try launchScreen.validate()
       try main.validate()
     }
     
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
+    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UIViewController
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+      }
       
       fileprivate init() {}
     }
@@ -215,8 +197,10 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "a2212145730_16.jpg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'a2212145730_16.jpg' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "a2164104584_16.jpg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'a2164104584_16.jpg' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "a2212145730_16.jpg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'a2212145730_16.jpg' is used in storyboard 'Main', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
         if _R.storyboard.main().browseViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'browseViewController' could not be loaded from storyboard 'Main' as 'BrowseViewController'.") }
         if _R.storyboard.main().albumTracksViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'albumTracksViewController' could not be loaded from storyboard 'Main' as 'AlbumTracksViewController'.") }
       }
